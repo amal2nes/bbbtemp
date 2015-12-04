@@ -1,0 +1,1 @@
+The following project is used to demonstrate the "Node.js Tools for Visual Studio" extension, particularly for remote debugging on embedded platforms like BeagleBone Black.
