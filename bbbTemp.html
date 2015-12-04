@@ -1,0 +1,24 @@
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src = "/socket.io/socket.io.js" > </script>
+    <script>
+    var socket = io.connect();
+    socket.on('temperature', handleTemperature);
+
+    function handleTemperature(message) {
+        var data = JSON.parse(message);
+        var tempC = data.temperature;
+        var tempF = (tempC * 9/5) + 32;
+        $("#temp").html(" " + tempC + "&deg; C<br> " + tempF + "&deg; F");
+    }
+    </script>
+</head> 
+ 
+<body>
+    <h1 style="font-size:30pt;">bbbTemp</h1>
+	<br>
+    <h1 style="font-size:20pt;">Temperature</h1>
+    <h2 style="font-size:16pt;"id="temp">-</h2>
+</body>
+</html>
